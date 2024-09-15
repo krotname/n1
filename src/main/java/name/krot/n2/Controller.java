@@ -42,6 +42,11 @@ public class Controller {
                 .orElseThrow();
     }
 
+    @GetMapping("/book2/{id}")
+    public Optional<Book> getBook2(Long id) {
+        return bookRepository.findById(id);
+    }
+
     @GetMapping("/autors")
     public List<Autor> getAutors() {
         return autorRepository.findAll();

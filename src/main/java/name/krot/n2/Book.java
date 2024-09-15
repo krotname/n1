@@ -13,6 +13,6 @@ public class Book {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String name;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy= "books")
     private Set<Autor> autors;
 }
