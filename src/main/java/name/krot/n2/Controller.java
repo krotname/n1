@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 // http://localhost:8080/swagger-ui/index.html#/controller/getAutors
@@ -26,6 +27,7 @@ public class Controller {
                 .map(b -> BookDto.builder()
                         .id(b.getId())
                         .name(b.getName())
+                        .autors(b.getAutor().getName())
                         .build())
                 .toList();
     }
@@ -37,7 +39,6 @@ public class Controller {
                 .map(b -> BookDto.builder()
                         .id(id)
                         .name(b.getName())
-                        .autors(b.getAutors())
                         .build())
                 .orElseThrow();
     }
