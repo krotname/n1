@@ -27,6 +27,6 @@ public class Autor {
 
     @Getter
     @JsonManagedReference
-    @OneToMany(mappedBy = "autor", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "autor", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books;
 }
